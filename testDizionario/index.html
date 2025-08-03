@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary</title>
+    <style>
+        @font-face {
+            font-family: Times New Giworlic;
+            src: url(./TimesNewGiworlic.otf);
+        }
+        body {
+            font-family: 'Times New Roman', serif;
+        }
+        .giworlic {
+            font-family: 'Times New Giworlic', serif;
+        }
+        .table {
+            background-color: gray;
+        }
+        .cell {
+            width: 16.6%;
+            border-width: 0px 1px;
+            border-color: black;
+            border-style: dotted;
+            padding: 3px;
+        }
+        .columnHead {
+            background-color: gold;
+        }
+        a {
+            text-decoration: inherit;
+            color: inherit;
+        }
+        .row {
+            display: flex;
+            border-width: 2px 0px 0px 0px;
+            border-color: black;
+            border-style: solid;
+        }
+        .row:hover {
+            font-weight: bold;
+        }
+
+        .entry:hover {
+            font-style: italic;
+        }
+
+        .word.latin, .translation:first-letter, .definition:first-letter {
+            text-transform: capitalize;
+        }
+
+        #dictionaryStyled {
+            left: auto;
+            right: auto;
+            padding-top: .5rem;
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0;
+            margin-right: -0.75rem;
+            margin-left: -0.75rem;
+            box-sizing: border-box;
+            text-align: center;
+            align-content: center;
+            justify-content: center;
+        }
+        .dictionaryColumn {
+            --margin: 0.75rem;
+            --quantity: 3;
+            width: calc(max(30% - 2*var(--margin), min(100% - 2*var(--margin), 300px)));
+            flex: 0 0 auto;
+            margin-right: var(--margin);
+            margin-left: var(--margin);
+            text-align: left;
+        }
+    </style>
+</head>
+<body onload="initialize()">
+    <header>
+        <nav style="position: fixed;">
+            <button onclick="changeMode('table')">Table</button>
+            <button onclick="changeMode('dictionary')">Dictionary</button>
+        </nav>
+        <nav id="singleWord" style="visibility: hidden; position: fixed;">
+            <p style="background-color: gray;" onclick="showSingleWord('')">XXXXXXXXXXX CLOSECLOSECLOSECLOSE XXXXXXXXXX</p>
+            <h1 id="word" class="latin word"></h1>
+            <h1 id="wordd" class="giworlic word"></h1>
+            <p id="ipa"></p>
+            <p id="pos"></p>
+            <p id="class"></p>
+            <p id="ita"></p>
+            <p id="eng"></p>
+            <p id="longdef"></p>
+            <p id="lyz"></p>
+        </nav>
+    </header>
+    <br><br>
+    <div class="table" id="dictionaryTable" style="display: block"></div>
+    <div id="dictionaryStyled" style="display: none"></div>
+    <script src="loadData.js"></script>
+    <script src="sca2_core.js"></script>
+    <script src="romanize.js"></script>
+    <script src="sort.js"></script>
+    <script src="script.js"></script>
+    <script src="sca2_support.js"></script>
+    <script src="dictionaryView.js"></script>
+    <script src="tableView.js"></script>
+    <script>
+        function initialize() {
+            //initializeSca2()
+            showData()
+        }
+    </script>
+</body>
+</html>
