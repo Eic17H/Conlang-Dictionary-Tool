@@ -3,11 +3,12 @@
  * Returns the word list as an array of objects
  */
 function loadData() {
-    return fetch(".\\markdown\\Giwords\\giw.md")
+    return fetch(".\\data\\giw\\giw.md")
     .then(response => response.text())
     .then((data) => {
         let i, j
-        data = data.replace(/\n[| -]+\n/, "\n")
+        let regexp = /(\| [-]+ )+\|/g
+        data = data.replaceAll(regexp, "")
         data = data.split("\n")
         for (i in data) {
             data[i] = data[i].replace(/(^\|)/, "")

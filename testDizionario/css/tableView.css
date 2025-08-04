@@ -1,0 +1,22 @@
+.table {
+    background-color: gray;
+}
+.cell {
+    width: 16.6%;
+    border-width: 0px 1px;
+    border-color: black;
+    border-style: dotted;
+    padding: 3px;
+}
+.columnHead {
+    background-color: gold;
+}
+.row {
+    display: flex;
+    border-width: 2px 0px 0px 0px;
+    border-color: black;
+    border-style: solid;
+}
+.row:hover {
+    font-weight: bold;
+}

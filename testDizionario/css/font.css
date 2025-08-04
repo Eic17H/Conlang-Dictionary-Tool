@@ -1,0 +1,11 @@
+@font-face {
+    font-family: Times New Giworlic;
+    src: url('..\\assets\\TimesNewGiworlic.woff2');
+}
+body {
+    font-family: 'Times New Roman', serif;
+}
+.giworlic {
+    font-family: 'Times New Giworlic', serif;
+    font-feature-settings: "rlig" 1, "liga" 1, "kern" 1;
+}

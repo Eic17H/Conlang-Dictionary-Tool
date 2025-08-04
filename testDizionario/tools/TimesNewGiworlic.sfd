@@ -1,7 +1,7 @@
 SplineFontDB: 3.2
-FontName: TimesNewGiworlic
-FullName: Times New Giworlic
-FamilyName: Times New Giworlic
+FontName: Giworlic
+FullName: Giworlic
+FamilyName: Giworlic
 Weight: Regular
 Copyright: Copyright (URW)++,Copyright 2014 by (URW)++ Design & Development
 Version: 1.00
@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1439302086
-ModificationTime: 1754174648
+ModificationTime: 1754225958
 PfmFamily: 81
 TTFWeight: 400
 TTFWidth: 5
@@ -57,18 +57,18 @@ OS2XHeight: 450
 OS2Vendor: 'URW '
 OS2CodePages: 6000009f.00000000
 OS2UnicodeRanges: 00000287.00000000.00000000.00000000
-Lookup: 4 0 1 "liga" { "Y3"  "glides-w"  "glides-j"  } ['gsub' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'dflt' > ) ]
+Lookup: 4 0 1 "rlig" { "rlig-1"  "rlig-2"  "rlig-3"  } ['rlig' ('DFLT' <'dflt' > 'cyrl' <'dflt' > 'grek' <'dflt' > 'latn' <'dflt' > ) ]
 Lookup: 258 0 0 "'kern' Horizontal Kerning in Latin lookup 0" { "'kern' Horizontal Kerning in Latin lookup 0 subtable"  } ['kern' ('DFLT' <'dflt' > 'latn' <'AZE ' 'CRT ' 'DEU ' 'MOL ' 'ROM ' 'TRK ' 'dflt' > ) ]
 MarkAttachClasses: 1
 DEI: 91125
-LangName: 1033 "Copyright 2014 by (URW)+-+- Design & Development GmbH" "NimbusRomNo9L" "" "" "NimbusRomNo9L-Reg" "Version 1.000;PS 1.00;hotconv 1.0.57;makeotf.lib2.0.21895" "" "" "(URW)+-+- Design & Development" "" "" "http://www.urwpp.de" "http://www.urwpp.com" "" "" "" "Nimbus Roman No9 L" "Regular" "NimbusRomNo9LReg"
+LangName: 1033 "Copyright 2014 by (URW)+-+- Design & Development GmbH" "" "" "" "" "Version 1.000;PS 1.00;hotconv 1.0.57;makeotf.lib2.0.21895" "" "" "(URW)+-+- Design & Development" "" "" "http://www.urwpp.de" "http://www.urwpp.com" "" "" "" "Giworlic" "Regular" "Giworlic"
 Encoding: Custom
 UnicodeInterp: none
 NameList: AGL For New Fonts
-DisplaySize: -72
+DisplaySize: -48
 AntiAlias: 1
 FitToEm: 0
-WinInfo: 675 25 9
+WinInfo: 456 38 12
 BeginPrivate: 6
 BlueValues 23 [-14 0 450 460 662 676]
 BlueShift 1 1
@@ -6196,8 +6196,8 @@ SplineSet
 EndSplineSet
 Validated: 9
 Kerns2: 2 -38 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 13 -1 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 14 11 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 15 -8 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 27 8 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 28 12 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 32 -48 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 67 -8 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 68 7 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 69 7 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 72 -20 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 77 -17 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 82 8 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 85 -8 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 87 -29 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 88 -30 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 90 -31 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 91 -17 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 565 -31 "'kern' Horizontal Kerning in Latin lookup 0 subtable" 569 -6 "'kern' Horizontal Kerning in Latin lookup 0 subtable"
-Ligature2: "Y3" Y2 COMB3
-Ligature2: "Y3" Y1 COMB3
+Ligature2: "rlig-1" Y2 COMB3
+Ligature2: "rlig-1" Y1 COMB3
 LCarets2: 1 0
 EndChar
 
@@ -30583,7 +30583,7 @@ Fore
 Refer: 75 106 S 1 0 0 1 240 327 2
 Refer: 80 111 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-j" J O1
+Ligature2: "rlig-3" J O1
 EndChar
 
 StartChar: WO1
@@ -30597,7 +30597,7 @@ Fore
 Refer: 88 119 S 1 0 0 1 176 326 2
 Refer: 80 111 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-w" W O1
+Ligature2: "rlig-2" W O1
 EndChar
 
 StartChar: JO2
@@ -30612,7 +30612,7 @@ Refer: 75 106 S 1 0 0 1 240 327 2
 Refer: 796 652 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J O2
+Ligature2: "rlig-3" J O2
 EndChar
 
 StartChar: WO2
@@ -30627,7 +30627,7 @@ Refer: 88 119 S 1 0 0 1 176 326 2
 Refer: 796 652 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-w" W O2
+Ligature2: "rlig-2" W O2
 EndChar
 
 StartChar: JO3
@@ -30642,7 +30642,7 @@ Refer: 75 106 S -1 0 -0 -1 523 368 2
 Refer: 803 491 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J O3
+Ligature2: "rlig-3" J O3
 EndChar
 
 StartChar: WO3
@@ -30657,7 +30657,7 @@ Refer: 88 119 S -1 0 0 -1 599 368.649 2
 Refer: 803 491 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-w" W O3
+Ligature2: "rlig-2" W O3
 EndChar
 
 StartChar: JA2
@@ -30671,7 +30671,7 @@ Fore
 Refer: 75 106 S 1 0 0 1 143 332 2
 Refer: 66 97 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-j" J A2
+Ligature2: "rlig-3" J A2
 EndChar
 
 StartChar: WA2
@@ -30683,7 +30683,7 @@ VStem: 328 110<497 544.5> 345 118<140.5 208.5 125.5 212.5>
 LayerCount: 2
 Fore
 Refer: 66 97 N 1 0 0 1 0 0 2
-Ligature2: "glides-w" W A2
+Ligature2: "rlig-2" W A2
 EndChar
 
 StartChar: JA1
@@ -30697,7 +30697,7 @@ Fore
 Refer: 75 106 S 1 0 0 1 143 332 2
 Refer: 804 593 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-j" J A1
+Ligature2: "rlig-3" J A1
 EndChar
 
 StartChar: WA1
@@ -30710,7 +30710,7 @@ LayerCount: 2
 Fore
 Refer: 804 593 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-w" W A1
+Ligature2: "rlig-2" W A1
 EndChar
 
 StartChar: JA3
@@ -30722,7 +30722,7 @@ Fore
 Refer: 75 106 S -1 0 0 -1 456 377 2
 Refer: 197 261 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-j" J A3
+Ligature2: "rlig-3" J A3
 EndChar
 
 StartChar: WA3
@@ -30732,7 +30732,7 @@ Flags: W
 LayerCount: 2
 Fore
 Refer: 197 261 N 1 0 0 1 0 0 2
-Ligature2: "glides-w" W A3
+Ligature2: "rlig-2" W A3
 EndChar
 
 StartChar: JE2
@@ -30746,7 +30746,7 @@ Fore
 Refer: 75 106 S 1 0 0 1 152 20 2
 Refer: 70 101 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-j" J E2
+Ligature2: "rlig-3" J E2
 EndChar
 
 StartChar: WE2
@@ -30758,7 +30758,7 @@ VStem: 71 86<515.5 531> 390 101<116.5 146.5>
 LayerCount: 2
 Fore
 Refer: 70 101 N 1 0 0 1 0 0 2
-Ligature2: "glides-w" W E2
+Ligature2: "rlig-2" W E2
 EndChar
 
 StartChar: JE1
@@ -30772,7 +30772,7 @@ Fore
 Refer: 75 106 S 1 0 0 1 152 20 2
 Refer: 184 248 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-j" J E1
+Ligature2: "rlig-3" J E1
 EndChar
 
 StartChar: WE1
@@ -30785,7 +30785,7 @@ LayerCount: 2
 Fore
 Refer: 184 248 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-w" W E1
+Ligature2: "rlig-2" W E1
 EndChar
 
 StartChar: JE3
@@ -30799,7 +30799,7 @@ Fore
 Refer: 75 106 S 1 0 0 1 152 20 2
 Refer: 217 281 N 1 0 0 1 0 0 2
 LCarets2: 1 0
-Ligature2: "glides-j" J E3
+Ligature2: "rlig-3" J E3
 EndChar
 
 StartChar: WE3
@@ -30811,7 +30811,7 @@ VStem: 71 86<515.5 531> 390 101<116.5 146.5>
 LayerCount: 2
 Fore
 Refer: 217 281 N 1 0 0 1 0 0 2
-Ligature2: "glides-w" W E3
+Ligature2: "rlig-2" W E3
 EndChar
 
 StartChar: JU1
@@ -30826,7 +30826,7 @@ Refer: 75 106 S 1 0 0 1 179 369 2
 Refer: 86 117 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J U1
+Ligature2: "rlig-3" J U1
 EndChar
 
 StartChar: WU1
@@ -30839,7 +30839,7 @@ LayerCount: 2
 Fore
 Refer: 86 117 N 1 0 0 1 0 0 2
 Validated: 9
-Ligature2: "glides-w" W U1
+Ligature2: "rlig-2" W U1
 EndChar
 
 StartChar: JU2
@@ -30854,7 +30854,7 @@ Refer: 75 106 S 1 0 0 1 179 369 2
 Refer: 786 623 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J U2
+Ligature2: "rlig-3" J U2
 EndChar
 
 StartChar: WU2
@@ -30867,7 +30867,7 @@ LayerCount: 2
 Fore
 Refer: 786 623 N 1 0 0 1 0 0 2
 Validated: 9
-Ligature2: "glides-w" W U2
+Ligature2: "rlig-2" W U2
 EndChar
 
 StartChar: JU3
@@ -30882,7 +30882,7 @@ Refer: 75 106 S -1 0 0 -1 462 372.649 2
 Refer: 307 371 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J U3
+Ligature2: "rlig-3" J U3
 EndChar
 
 StartChar: WU3
@@ -30895,7 +30895,7 @@ LayerCount: 2
 Fore
 Refer: 307 371 N 1 0 0 1 0 0 2
 Validated: 9
-Ligature2: "glides-w" W U3
+Ligature2: "rlig-2" W U3
 EndChar
 
 StartChar: JY1
@@ -30910,7 +30910,7 @@ Refer: 75 106 S 1 0 0 1 99 0 2
 Refer: 805 629 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J Y1
+Ligature2: "rlig-3" J Y1
 EndChar
 
 StartChar: WY1
@@ -30923,7 +30923,7 @@ LayerCount: 2
 Fore
 Refer: 805 629 N 1 0 0 1 0 0 2
 Validated: 1
-Ligature2: "glides-w" W Y1
+Ligature2: "rlig-2" W Y1
 EndChar
 
 StartChar: JY2
@@ -30938,7 +30938,7 @@ Refer: 75 106 S 1 0 0 1 99 0 2
 Refer: 806 477 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J Y2
+Ligature2: "rlig-3" J Y2
 EndChar
 
 StartChar: WY2
@@ -30951,7 +30951,7 @@ LayerCount: 2
 Fore
 Refer: 806 477 N 1 0 0 1 0 0 2
 Validated: 1
-Ligature2: "glides-w" W Y2
+Ligature2: "rlig-2" W Y2
 EndChar
 
 StartChar: JY3
@@ -30972,7 +30972,7 @@ EndSplineSet
 Refer: 833 -1 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-j" J Y3
+Ligature2: "rlig-3" J Y3
 EndChar
 
 StartChar: WY3
@@ -30993,7 +30993,7 @@ EndSplineSet
 Refer: 833 -1 N 1 0 0 1 0 0 2
 Validated: 5
 LCarets2: 1 0
-Ligature2: "glides-w" W Y3
+Ligature2: "rlig-2" W Y3
 EndChar
 
 StartChar: JI1
@@ -31006,7 +31006,7 @@ LayerCount: 2
 Fore
 Refer: 90 121 N 1 0 0 1 0 0 2
 Validated: 1
-Ligature2: "glides-j" J I1
+Ligature2: "rlig-3" J I1
 EndChar
 
 StartChar: WI1
@@ -31019,7 +31019,7 @@ LayerCount: 2
 Fore
 Refer: 90 121 N 1 0 0 1 0 0 2
 Validated: 1
-Ligature2: "glides-w" W I1
+Ligature2: "rlig-2" W I1
 EndChar
 
 StartChar: JI2
@@ -31032,7 +31032,7 @@ LayerCount: 2
 Fore
 Refer: 74 105 N 1 0 0 1 0 0 2
 Validated: 9
-Ligature2: "glides-j" J I2
+Ligature2: "rlig-3" J I2
 EndChar
 
 StartChar: WI2
@@ -31045,7 +31045,7 @@ LayerCount: 2
 Fore
 Refer: 74 105 N 1 0 0 1 0 0 2
 Validated: 9
-Ligature2: "glides-w" W I2
+Ligature2: "rlig-2" W I2
 EndChar
 
 StartChar: JI3
@@ -31057,7 +31057,7 @@ VStem: 84 102<617.5 646> 99 56<-81.5 -73> 101 84<102 334 334 356>
 LayerCount: 2
 Fore
 Refer: 239 303 N 1 0 0 1 0 0 2
-Ligature2: "glides-j" J I3
+Ligature2: "rlig-3" J I3
 EndChar
 
 StartChar: WI3
@@ -31069,7 +31069,7 @@ VStem: 84 102<617.5 646> 99 56<-81.5 -73> 101 84<102 334 334 356>
 LayerCount: 2
 Fore
 Refer: 239 303 N 1 0 0 1 0 0 2
-Ligature2: "glides-w" W I3
+Ligature2: "rlig-2" W I3
 EndChar
 
 StartChar: NameMe.854

@@ -1,17 +1,14 @@
 var currentWord = ""
-var mode = 'table'
+var mode = 'dictionary'
 
 function capitalize(string) {
     if(!string) return ""
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-function showData() {
-    loadData()
-    .then((words) => {
-        allDictionaryEntries(words)
-        showTable(words)
-    })
+function showData(words) {
+    allDictionaryEntries(words)
+    showTable(words)
 }
 
 function applySca2(word, filename) {
@@ -89,3 +86,35 @@ function showSingleWord(word) {
     })
 }
 
+function getParams() {
+    let url = window.location.href
+    let params = url.match(/.*\?(.*)/)
+    if(params) params = params[1]
+    params = String(params).split("&")
+    let pars = {}
+    for (let i in params) {
+        let split = params[i].split("=")
+        if(split && split.length==2) pars[split[0]] = split[1]
+    }
+    return pars
+}
+
+function checkParams() {
+    let pars = getParams()
+    console.log(pars)
+    if(pars.word) {
+        console.log(pars.word)
+        showSingleWord(pars.word)
+    }
+}
+
+function copyCurrentWordLink() {
+    let url = window.location.href.match(/(.*)(\?.*)?/)[1]
+    let copyText = `${url}?word=${currentWord}`
+    let input = document.createElement("input");
+    input.value = copyText;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand("copy");
+    document.body.removeChild(input); 
+}

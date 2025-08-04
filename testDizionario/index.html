@@ -4,111 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dictionary</title>
+    <link rel="stylesheet" type="text/css" href=".\css\font.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href=".\css\tableView.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href=".\css\dictionaryView.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href=".\css\theme.css" media="screen"/>
     <style>
-        @font-face {
-            font-family: Times New Giworlic;
-            src: url(./TimesNewGiworlic.otf);
-        }
         body {
-            font-family: 'Times New Roman', serif;
-        }
-        .giworlic {
-            font-family: 'Times New Giworlic', serif;
-        }
-        .table {
-            background-color: gray;
-        }
-        .cell {
-            width: 16.6%;
-            border-width: 0px 1px;
-            border-color: black;
-            border-style: dotted;
-            padding: 3px;
-        }
-        .columnHead {
-            background-color: gold;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
         a {
             text-decoration: inherit;
             color: inherit;
         }
-        .row {
-            display: flex;
-            border-width: 2px 0px 0px 0px;
-            border-color: black;
-            border-style: solid;
-        }
-        .row:hover {
-            font-weight: bold;
-        }
-
-        .entry:hover {
-            font-style: italic;
-        }
-
         .word.latin, .translation:first-letter, .definition:first-letter {
             text-transform: capitalize;
         }
-
-        #dictionaryStyled {
-            left: auto;
-            right: auto;
-            padding-top: .5rem;
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 0;
-            margin-right: -0.75rem;
-            margin-left: -0.75rem;
-            box-sizing: border-box;
-            text-align: center;
-            align-content: center;
-            justify-content: center;
+        @font-face {
+            font-family: Times New Giworlic;
+            src: url('.\\assets\\TimesNewGiworlic.woff2');
         }
-        .dictionaryColumn {
-            --margin: 0.75rem;
-            --quantity: 3;
-            width: calc(max(30% - 2*var(--margin), min(100% - 2*var(--margin), 300px)));
-            flex: 0 0 auto;
-            margin-right: var(--margin);
-            margin-left: var(--margin);
-            text-align: left;
+        button {
+            border: 10px;
+            border-color: var(--text-color);
+            background-color: var(--highlight-color);
+            color: var(--text-color);
         }
     </style>
 </head>
 <body onload="initialize()">
     <header>
-        <nav style="position: fixed;">
-            <button onclick="changeMode('table')">Table</button>
-            <button onclick="changeMode('dictionary')">Dictionary</button>
-        </nav>
-        <nav id="singleWord" style="visibility: hidden; position: fixed;">
-            <p style="background-color: gray;" onclick="showSingleWord('')">XXXXXXXXXXX CLOSECLOSECLOSECLOSE XXXXXXXXXX</p>
-            <h1 id="word" class="latin word"></h1>
-            <h1 id="wordd" class="giworlic word"></h1>
-            <p id="ipa"></p>
-            <p id="pos"></p>
-            <p id="class"></p>
-            <p id="ita"></p>
-            <p id="eng"></p>
-            <p id="longdef"></p>
-            <p id="lyz"></p>
+        <nav id="singleWord" style="visibility: hidden; position: fixed; width: 80%; margin: 0% 10%;">
+            <br>
+            <div style="display: flex; text-align: center; flex-wrap: wrap;">
+                <div style="width: 50%; min-width: 100px; margin: auto;"><button style="width: 70px; height: 70px; border-radius: 10px;" onclick="copyCurrentWordLink()"><img src="./assets/copyIcon.png" alt="Copy link to this word" class="icon darkIcon"></button></div>
+                <div style="width: 50%; min-width: 100px; margin: auto;"><button style="width: 70px; height: 70px; border-radius: 10px;" onclick="showSingleWord('')"><img src="./assets/closeIcon.png" alt="Close this word" class="icon lightIcon"></button></div>
+            </div>
+            <div style="display: flex; text-align: center; flex-wrap: wrap;">
+                <div style="width: 50%; min-width: 200px; margin: auto;"><h1 id="word" class="latin word"></h1></div>
+                <div style="width: 50%; min-width: 200px; margin: auto;"><h1 id="wordd" class="giworlic word"></h1></div>
+            </div>
+            <div style="display: flex; text-align: center; flex-wrap: wrap;">
+                <div style="width: 100%; min-width: 200px; margin: auto;"><p id="ipa"></p></div>
+            </div>
+            <div style="display: flex; text-align: center; flex-wrap: wrap;">
+                <div style="margin: auto;"><p id="pos"></p></div>
+                <div style="margin: auto;"><p id="class"></p></div>
+            </div>
+            <p id="ita" class="definition"></p>
+            <p id="eng" class="definition"></p>
+            <p id="longdef" class="definition"></p>
         </nav>
     </header>
-    <br><br>
-    <div class="table" id="dictionaryTable" style="display: block"></div>
-    <div id="dictionaryStyled" style="display: none"></div>
-    <script src="loadData.js"></script>
-    <script src="sca2_core.js"></script>
-    <script src="romanize.js"></script>
-    <script src="sort.js"></script>
-    <script src="script.js"></script>
-    <script src="sca2_support.js"></script>
-    <script src="dictionaryView.js"></script>
-    <script src="tableView.js"></script>
+    <div class="table" id="dictionaryTable" style="display: none"></div>
+    <div id="dictionaryStyled" style="display: flex"></div>
+    <script src=".\script\loadData.js"></script>
+    <script src=".\script\sca2_core.js"></script>
+    <script src=".\script\romanize.js"></script>
+    <script src=".\script\sort.js"></script>
+    <script src=".\script\script.js"></script>
+    <script src=".\script\sca2_support.js"></script>
+    <script src=".\script\dictionaryView.js"></script>
+    <script src=".\script\tableView.js"></script>
     <script>
         function initialize() {
             //initializeSca2()
-            showData()
+            checkParams()
+            loadData().then((data) =>{
+                const words = data
+                showData(words)
+            })
         }
     </script>
 </body>

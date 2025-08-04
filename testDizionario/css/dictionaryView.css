@@ -1,0 +1,26 @@
+.entry:hover {
+    color: var(--accent-color)
+}
+#dictionaryStyled {
+    left: auto;
+    right: auto;
+    padding-top: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+    box-sizing: border-box;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+.dictionaryColumn {
+    --margin: 0.75rem;
+    --quantity: 3;
+    width: calc(max(30% - 2*var(--margin), min(100% - 2*var(--margin), 300px)));
+    flex: 0 0 auto;
+    margin-right: var(--margin);
+    margin-left: var(--margin);
+    text-align: left;
+}

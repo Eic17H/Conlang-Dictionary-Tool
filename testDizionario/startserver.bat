@@ -1,1 +1,1 @@
-powershell -command "Start-Process cmd -ArgumentList '/c cd /d %CD% && .\startserversupport.bat' -Verb runas"
+powershell -command "Start-Process cmd -ArgumentList '/c cd /d %CD% && .\tools\startserversupport.bat' -Verb runas"

@@ -1,0 +1,36 @@
+:root {
+    --background-color: white;
+    --text-color: black;
+    --highlight-color: gray;
+    --accent-color: teal;
+    --invert-to-dark: 1;
+    --invert-to-light: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+    --background-color: black;
+    --highlight-color: #222222;
+    --text-color: white;
+    --accent-color: teal;
+    --invert-to-dark: 0;
+    --invert-to-light: 1;
+    }
+}
+
+.darkIcon {
+    --invert: var(--invert-to-light);
+}
+
+.lightIcon {
+    --invert: var(--invert-to-dark);
+}
+
+.icon, .darkIcon, .lightIcon {
+    filter: invert(var(--invert));
+    height: 50px;
+}
+
+.icon:hover {
+    opacity: 60%;
+}
