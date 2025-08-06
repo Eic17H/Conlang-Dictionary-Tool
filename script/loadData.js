@@ -74,11 +74,11 @@ var wordsReverse = {}
 var path = ""
 
 function loadPath() {
-    return "https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary"
     console.log()
     return fetch("../data/path.txt")
     .then(response => response.text())
     .then((data) => {
+        return "https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary"
         path = data
         return 200
     })
