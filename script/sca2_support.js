@@ -28,8 +28,8 @@ function initializeSca2() {
     return fetch(`${path}/giw/lyz/changes.txt`)
     .then(response => response.text())
     .then(data => {
+        data = data.replace("\r", "")
         data = String(data).split("\n\n")
-        let ilex = ""
         document.getElementsByTagName("body")[0].innerHTML += `
         <div id="sca2Support">
         <!-- Required hidden elements and form for SCA2 to function -->
