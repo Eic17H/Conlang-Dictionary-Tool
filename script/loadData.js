@@ -71,18 +71,7 @@ let families = {
  * Returns the word list as an array of objects
  */
 var wordsReverse = {}
-var path = ""
-
-function loadPath() {
-    console.log()
-    return fetch("../data/path.txt")
-    .then(response => response.text())
-    .then((data) => {
-        return "https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary"
-        path = data
-        return 200
-    })
-}
+var path = "https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary"
 
 function loadData() {
     return fetch(`${path}/families.txt`)

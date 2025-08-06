@@ -70,12 +70,10 @@
         function initialize() {
             //loadScript()
             checkParams()
-            loadPath().then((status) => {
-                initializeSca2().then((status) => {
-                    loadData().then((data) =>{
-                        const words = data
-                        showData(words)
-                    })
+            initializeSca2().then((status) => {
+                loadData().then((data) =>{
+                    const words = data
+                    showData(words)
                 })
             })
         }
