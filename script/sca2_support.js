@@ -28,8 +28,15 @@ function initializeSca2() {
     return fetch(`${path}/giw/lyz/changes.txt`)
     .then(response => response.text())
     .then(data => {
+        console.log(path)
         data = data.replace("\r", "")
         data = String(data).split("\n\n")
+            console.log(data)
+        if(!data[0] || !data[1]) {
+            console.error("The sca2 file isn't formatted correctly")
+            console.log(data)
+            return 500
+        }
         document.getElementsByTagName("body")[0].innerHTML += `
         <div id="sca2Support">
         <!-- Required hidden elements and form for SCA2 to function -->
