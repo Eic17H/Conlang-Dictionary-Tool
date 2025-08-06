@@ -68,11 +68,15 @@
     <script src=".\script\tableView.js"></script>
     <script>
         function initialize() {
-            //initializeSca2()
+            //loadScript()
             checkParams()
-            loadData().then((data) =>{
-                const words = data
-                showData(words)
+            loadPath().then((status) => {
+                initializeSca2().then((status) => {
+                    loadData().then((data) =>{
+                        const words = data
+                        showData(words)
+                    })
+                })
             })
         }
     </script>

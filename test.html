@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="fetchData()">
+    <script>
+        function fetchSca2() {
+            console.log("Fetching sca2...")
+            fetch("https://corsproxy.io/?https://zompist.com/sca2.html")
+            .then(res => res.text())
+            .then(html => {
+                //let js = html.split("<script language=\"javascript\" type=\"text/javascript\">")[1].split("<\/script>")[0]
+                // Extract the script content from the HTML
+                const tempDiv = document.createElement('div');
+                tempDiv.innerHTML = html;
+                const scripts = tempDiv.querySelectorAll('script');
+
+                scripts.forEach(script => {
+                const code = script.textContent;
+                // Execute script in global scope
+                (0, eval)(code); // or: new Function(code)();
+                });
+                console.log("Fetched sca2!")
+            });
+        }
+    </script>
+</body>
+</html>

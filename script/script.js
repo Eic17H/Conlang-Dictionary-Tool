@@ -21,6 +21,9 @@ function applySca2(word, filename) {
     })
 }
 
+/**
+ * TODO: homonyms using wordsReverse
+ */
 function showWord() {
     return loadData()
     .then((words) => {
@@ -101,7 +104,7 @@ function getParams() {
 
 function checkParams() {
     let pars = getParams()
-    console.log(pars)
+    //console.log(pars)
     if(pars.word) {
         console.log(pars.word)
         showSingleWord(pars.word)

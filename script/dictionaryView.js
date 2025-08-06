@@ -15,6 +15,7 @@ function dictionaryEntry(word) {
         if(word.ita) x += ` ` + capitalize(word.ita) + `.`
         if(word.eng) x += ` ` + capitalize(word.eng) + `.`
         if(word.longdef) x += ` ` + capitalize(word.longdef) + `.`
+        x += `<span style="font-size: 0px">${word.ascii}</span>`
     x += `</div>`
     return x
 }

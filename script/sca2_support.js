@@ -1,7 +1,7 @@
 // Made by ChatGPT, I'm sorry
 function runSCA(input) {
     // Simulate filling the form used by SCA2
-    if(typeof input == String) document.theform.ilex.value = input;
+    document.theform.ilex.value = String(input);
     // TODO: turn array of word objects into a string with line breaks
 
     // Set options
@@ -25,13 +25,18 @@ function runSCA(input) {
  */
 // Also used ChatGPT to figure this out
 function initializeSca2() {
-    document.getElementsByTagName("body")[0].innerHTML += `
+    return fetch(`${path}/giw/lyz/changes.txt`)
+    .then(response => response.text())
+    .then(data => {
+        data = String(data).split("\n\n")
+        let ilex = ""
+        document.getElementsByTagName("body")[0].innerHTML += `
         <div id="sca2Support">
-            <!-- Required hidden elements and form for SCA2 to function -->
-            <form name="theform" style="display:none">
-                <textarea name="cats"></textarea>
-                <textarea name="rewrite"></textarea>
-                <textarea name="rules"></textarea>
+        <!-- Required hidden elements and form for SCA2 to function -->
+        <form name="theform" style="display:none">
+                <textarea name="cats">${data[0].match(/(.*=.*\n)+/)[0]}</textarea>
+                <textarea name="rewrite">${data[0].match(/(\n.*\|.*)+/)[0]}</textarea>
+                <textarea name="rules">${data[1]}</textarea>
                 <textarea name="ilex"></textarea>
                 <input type="radio" name="outtype" checked>
                 <input type="radio" name="outtype">
@@ -42,9 +47,11 @@ function initializeSca2() {
                 <input type="checkbox" name="useilex" checked>
                 <input type="checkbox" name="showinterm">
                 <input type="checkbox" name="intonly">
-            </form>
-            <div id="olex" style="display:none"></div>
-            <div id="mytext" style="display:none"></div>
-        </div>
-    `
+                </form>
+                <div id="olex" style="display:none"></div>
+                <div id="mytext" style="display:none"></div>
+                </div>
+                `
+        return 200
+    })
 }
