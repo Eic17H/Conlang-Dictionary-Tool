@@ -25,9 +25,10 @@ function runSCA(input) {
  */
 // Also used ChatGPT to figure this out
 function initializeSca2() {
-    return fetch(`${path}/giw/lyz/changes.txt`)
+    return fetch(`https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/giw/lyz/changes.txt`)
     .then(response => response.text())
     .then(data => {
+        return 500
         console.log(path)
         data = data.replace("\r", "")
         data = String(data).split("\n\n")
