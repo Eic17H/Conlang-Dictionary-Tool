@@ -74,11 +74,11 @@ var wordsReverse = {}
 var path = "https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary"
 
 function loadData() {
-    return fetch(`${path}/families.txt`)
+    return fetch(`https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/families.txt`)
     .then(response => response.text())
     .then((data) => {
-        data = data.split("\n")
-        return loadLanguage(`${path}/${data[0]}/words.md`)
+        //data = data.split("\n")
+        return loadLanguage(`https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/giw/words.md`)
     })
 }
 
