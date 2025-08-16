@@ -1,7 +1,7 @@
 SplineFontDB: 3.2
-FontName: Giworlic
-FullName: Giworlic
-FamilyName: Giworlic
+FontName: TimesNewGiworlic
+FullName: Times New Giworlic
+FamilyName: TimesNewGiworlic
 Weight: Regular
 Copyright: Copyright (URW)++,Copyright 2014 by (URW)++ Design & Development
 Version: 1.00
@@ -22,7 +22,7 @@ OS2Version: 3
 OS2_WeightWidthSlopeOnly: 0
 OS2_UseTypoMetrics: 0
 CreationTime: 1439302086
-ModificationTime: 1754225958
+ModificationTime: 1755102673
 PfmFamily: 81
 TTFWeight: 400
 TTFWidth: 5
