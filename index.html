@@ -54,26 +54,30 @@
             <p id="ita" class="definition"></p>
             <p id="eng" class="definition"></p>
             <p id="longdef" class="definition"></p>
+            <div id="descendants">
+                <p id="lyz"></p>
+            </div>
         </nav>
     </header>
     <div class="table" id="dictionaryTable" style="display: none"></div>
     <div id="dictionaryStyled" style="display: flex"></div>
     <script src=".\script\loadData.js"></script>
+    <script src=".\script\sca2_support.js"></script>
     <script src=".\script\sca2_core.js"></script>
     <script src=".\script\romanize.js"></script>
     <script src=".\script\sort.js"></script>
     <script src=".\script\script.js"></script>
-    <script src=".\script\sca2_support.js"></script>
     <script src=".\script\dictionaryView.js"></script>
     <script src=".\script\tableView.js"></script>
     <script>
         function initialize() {
             //loadScript()
             checkParams()
+            initializeSca2().then(() => {
             loadData().then((data) =>{
                 const words = data
                 showData(words)
-            })
+            })})
         }
     </script>
 </body>

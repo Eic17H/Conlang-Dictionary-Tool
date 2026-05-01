@@ -28,7 +28,8 @@ function initializeSca2() {
     return fetch(`https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/giw/lyz/changes.txt`)
     .then(response => response.text())
     .then(data => {
-        return 500
+        console.log(data)
+        //return 500
         console.log(path)
         data = data.replace("\r", "")
         data = String(data).split("\n\n")
@@ -36,7 +37,7 @@ function initializeSca2() {
         if(!data[0] || !data[1]) {
             console.error("The sca2 file isn't formatted correctly")
             console.log(data)
-            return 500
+            return "500"
         }
         document.getElementsByTagName("body")[0].innerHTML += `
         <div id="sca2Support">

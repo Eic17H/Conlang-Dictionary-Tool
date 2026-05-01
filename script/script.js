@@ -6,6 +6,9 @@ function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
+/**
+ * Takes in a word list as a JS object and displays it in HTML
+ */
 function showData(words) {
     allDictionaryEntries(words)
     showTable(words)
@@ -39,6 +42,8 @@ function showWord() {
             let x = document.getElementById(i)
             if (x!=null) x.innerHTML = worde[i]
         }
+        let x = document.getElementById("lyz")
+        if(x!=null) x.innerHTML = "Lyzian: "+ runSCA(worde.word)
         document.getElementById("wordd").innerHTML = worde.word
         return 200
     })
@@ -69,6 +74,7 @@ function changeMode(newMode) {
 }
 
 function showSingleWord(word) {
+    if(word=='') history.replaceState(null, '', window.location.href.match(/([^\?]*)(\?.*)*/)[1]);
     currentWord = word
     let dictionaryTable = document.getElementById("dictionaryTable")
     let dictionaryStyled = document.getElementById("dictionaryStyled")
@@ -102,17 +108,20 @@ function getParams() {
     return pars
 }
 
+/**
+ * Parses and applies parameters
+ */
 function checkParams() {
     let pars = getParams()
     //console.log(pars)
     if(pars.word) {
-        console.log(pars.word)
+        console.log("Showing single word: " + pars.word)
         showSingleWord(pars.word)
     }
 }
 
 function copyCurrentWordLink() {
-    let url = window.location.href.match(/(.*)(\?.*)?/)[1]
+    let url = window.location.href.match(/([^\?]*)(\?.*)*/)[1]
     let copyText = `${url}?word=${currentWord}`
     let input = document.createElement("input");
     input.value = copyText;

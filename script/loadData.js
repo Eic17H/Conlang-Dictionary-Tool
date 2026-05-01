@@ -73,15 +73,24 @@ let families = {
 var wordsReverse = {}
 var path = "https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary"
 
+/*
+
+*/
 function loadData() {
+    // Fetch list of families (currently unused, but will be useful eventually when multiple families are supported)
     return fetch(`https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/families.txt`)
     .then(response => response.text())
     .then((data) => {
+        // Hard coded to load "giw"
+        // Loads the word list from a single file
         //data = data.split("\n")
         return loadLanguage(`https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/giw/words.md`)
     })
 }
 
+/*
+    Reads a word list in raw markdown and returns a JS object containing the words
+*/
 function loadLanguage(path) {
     return fetch(path)
     .then(response => response.text())
