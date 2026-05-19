@@ -44,9 +44,9 @@ function showWord() {
             if (x!=null) x.innerHTML = worde[i]
         }
         let x = document.getElementById("lyz")
-        if(x!=null) x.innerHTML = "Lyzian: "+ worde.descendants.lyz
+        if(x!=null) x.innerHTML = "Lyzian: "+ worde.descendants.lyz.toString()
         let y = document.getElementById("nus")
-        if(y!=null) y.innerHTML = "Lyzian: "+ worde.descendants.nus
+        if(y!=null) y.innerHTML = "Nusan: "+ worde.descendants.nus.toString()
         document.getElementById("wordd").innerHTML = worde.word
         return 200
     })
