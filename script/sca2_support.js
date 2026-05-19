@@ -30,7 +30,20 @@ function initializeSca2(lang) {
     .then(response => response.text())
     .then(data => {
         console.log(data)
+        //testing if the default function works
+        theText=data
+        var ruln = theText.split("\n");
+		var rulr = theText.split("\r");
+		if (rulr > ruln) {
+			var newS = "";
+			for (var w = 0; w < rulr.length; w++)			
+				newS += rulr[w] + "\n";
+			theText = newS;
+		}
+		theform.rules.value = theText;
+		parsesc();
         //return 500
+        /*
         console.log(path)
         data = data.replace("\r", "")
         data = String(data).split("\n\n")
@@ -39,7 +52,7 @@ function initializeSca2(lang) {
             console.error("The sca2 file isn't formatted correctly")
             console.log(data)
             return "500"
-        }
+        }*/
         
         let sca2SupportElementText = `
         <!-- Required hidden elements and form for SCA2 to function -->
