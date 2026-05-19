@@ -24,8 +24,9 @@ function runSCA(input) {
  * Required hidden elements and form for SCA2 to function
  */
 // Also used ChatGPT to figure this out
-function initializeSca2() {
-    return fetch(`https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/giw/lyz/changes.txt`)
+function initializeSca2(lang) {
+    let filePath = `https://raw.githubusercontent.com/Eic17H/Conlangs/refs/heads/main/Dictionary/giw/${lang}/changes.txt`
+    return fetch(filePath)
     .then(response => response.text())
     .then(data => {
         console.log(data)
@@ -39,8 +40,8 @@ function initializeSca2() {
             console.log(data)
             return "500"
         }
-        document.getElementsByTagName("body")[0].innerHTML += `
-        <div id="sca2Support">
+        
+        let sca2SupportElementText = `
         <!-- Required hidden elements and form for SCA2 to function -->
         <form name="theform" style="display:none">
                 <textarea name="cats">${data[0].match(/(.*=.*\n)+/)[0]}</textarea>
@@ -59,8 +60,12 @@ function initializeSca2() {
                 </form>
                 <div id="olex" style="display:none"></div>
                 <div id="mytext" style="display:none"></div>
-                </div>
                 `
+        let element = document.getElementById("sca2Support")
+        if(!element)
+            document.getElementsByTagName("body")[0].innerHTML += `<div id="sca2Support">\n${sca2SupportElementText}\n</div>`
+        else
+            element.innerHTML = sca2SupportElementText
         return 200
     })
 }
