@@ -40,8 +40,24 @@ function initializeSca2(lang) {
 				newS += rulr[w] + "\n";
 			theText = newS;
 		}
-		theform.rules.value = theText;
-		parsesc();
+        rul = theText
+        nrul = rul.length
+        var orul = "";
+        var orew = "";
+        var ocat = "";
+        var olex = "";
+
+        for (w = 0; w < nrul; w++) {
+            var t = rul[w];
+            if (find(t, "|") != -1) 
+                orew += t + "\n";
+            else if (find(t, "=") != -1) 
+                ocat += t + "\n";
+            else if (parseLex && find(t, "/") == -1 && t.charAt(0) != '-')
+                olex += t + "\n";
+            else
+                orul += t + "\n";
+        }
         //return 500
         /*
         console.log(path)
@@ -57,9 +73,9 @@ function initializeSca2(lang) {
         let sca2SupportElementText = `
         <!-- Required hidden elements and form for SCA2 to function -->
         <form name="theform" style="display:none">
-                <textarea name="cats">${data[0].match(/(.*=.*\n)+/)[0]}</textarea>
-                <textarea name="rewrite">${data[0].match(/(\n.*\|.*)+/)[0]}</textarea>
-                <textarea name="rules">${data[1]}</textarea>
+                <textarea name="cats">${ocat /*data[0].match(/(.*=.*\n)+/)[0]*/}</textarea>
+                <textarea name="rewrite">${roew /*data[0].match(/(\n.*\|.*)+/)[0]*/}</textarea>
+                <textarea name="rules">${orul /*data[1]*/}</textarea>
                 <textarea name="ilex"></textarea>
                 <input type="radio" name="outtype" checked>
                 <input type="radio" name="outtype">
