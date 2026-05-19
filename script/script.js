@@ -14,6 +14,7 @@ function showData(words) {
     showTable(words)
 }
 
+// Unused function that makes no sense
 function applySca2(word, filename) {
     return fetch(filename)
     .then(response => response.text())
