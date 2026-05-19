@@ -74,7 +74,7 @@ function initializeSca2(lang) {
         <!-- Required hidden elements and form for SCA2 to function -->
         <form name="theform" style="display:none">
                 <textarea name="cats">${ocat /*data[0].match(/(.*=.*\n)+/)[0]*/}</textarea>
-                <textarea name="rewrite">${roew /*data[0].match(/(\n.*\|.*)+/)[0]*/}</textarea>
+                <textarea name="rewrite">${orew /*data[0].match(/(\n.*\|.*)+/)[0]*/}</textarea>
                 <textarea name="rules">${orul /*data[1]*/}</textarea>
                 <textarea name="ilex"></textarea>
                 <input type="radio" name="outtype" checked>
