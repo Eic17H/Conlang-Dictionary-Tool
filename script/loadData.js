@@ -122,6 +122,17 @@ function loadLanguage(path) {
                 wordsReverse[word.ascii].push(words.length)
             }
         }
-        return customSort(words)
+        // Loading descendants
+        return initializeSca2("lyz").then(() => {
+            for(i in words) {
+                words[i]["descendants"]["lyz"] = runSca2(words[i].word)
+            }
+            return initializeSca2("nus").then(() => {
+            for(i in words) {
+                words[i]["descendants"]["nus"] = runSca2(words[i].word)
+                return customSort(words)
+            }
+        })
+        })
     })
 }

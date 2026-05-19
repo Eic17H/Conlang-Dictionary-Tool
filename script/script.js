@@ -43,7 +43,9 @@ function showWord() {
             if (x!=null) x.innerHTML = worde[i]
         }
         let x = document.getElementById("lyz")
-        if(x!=null) x.innerHTML = "Lyzian: "+ runSCA(worde.word)
+        if(x!=null) x.innerHTML = "Lyzian: "+ worde.descendants.lyz
+        let y = document.getElementById("nus")
+        if(y!=null) y.innerHTML = "Lyzian: "+ worde.descendants.nus
         document.getElementById("wordd").innerHTML = worde.word
         return 200
     })
