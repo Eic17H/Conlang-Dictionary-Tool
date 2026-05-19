@@ -123,6 +123,7 @@ function loadLanguage(path) {
             }
         }
         // Loading descendants
+        words[i].descendants = {lyz: {}, nus:{}}
         return initializeSca2("lyz").then(() => {
             for(i in words) {
                 words[i]["descendants"]["lyz"] = runSCA(words[i].word)
