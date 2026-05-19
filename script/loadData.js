@@ -126,14 +126,14 @@ function loadLanguage(path) {
         for(let i in words)
             words[i].descendants = {lyz: "", nus: ""}
         return initializeSca2("lyz").then(() => {
-            for(i in words) {
-                words[i].descendants.lyz = runSCA(words[i].word)
+            for(let j in words) {
+                words[j].descendants.lyz = runSCA(words[j].word).split("\n")[0]
             }
             return initializeSca2("nus").then(() => {
-            for(i in words) {
-                words[i].descendants.nus = runSCA(words[i].word)
-                return customSort(words)
+            for(let k in words) {
+                words[k].descendants.nus = runSCA(words[k].word).split("\n")[0]
             }
+            return customSort(words)
         })
         })
     })

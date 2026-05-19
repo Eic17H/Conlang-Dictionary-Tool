@@ -29,27 +29,28 @@ function applySca2(word, filename) {
  * TODO: homonyms using wordsReverse
  */
 function showWord() {
-    return loadData()
-    .then((words) => {
-        if(currentWord == "") return 200
-        let worde
-        let wordd = currentWord
-        //console.log(wordd)
-        for(let i in words) if(words[i].ascii == wordd) worde = words[i]
-        if(worde == undefined) return 404
-        //console.log(worde)
-        for(let i in worde){
-            //console.log(i)
-            let x = document.getElementById(i)
-            if (x!=null) x.innerHTML = worde[i]
-        }
-        let x = document.getElementById("lyz")
-        if(x!=null) x.innerHTML = "Lyzian: "+ worde.descendants.lyz.toString()
-        let y = document.getElementById("nus")
-        if(y!=null) y.innerHTML = "Nusan: "+ worde.descendants.nus.toString()
-        document.getElementById("wordd").innerHTML = worde.word
-        return 200
-    })
+    console.log("===== showWord() =====")
+    console.log(words)
+    if(currentWord == "") return 200
+    let worde
+    let wordd = currentWord
+    //console.log(wordd)
+    console.log("erctvybuniomp,èp")
+    for(let i in words) if(words[i].ascii == wordd) worde = words[i]
+    console.log(worde)
+    if(worde == undefined) return 404
+    //console.log(worde)
+    for(let i in worde){
+        //console.log(i)
+        let x = document.getElementById(i)
+        if (x!=null) x.innerHTML = worde[i]
+    }
+    let x = document.getElementById("lyz")
+    if(x!=null) x.innerHTML = "Lyzian: "+ worde.descendants.lyz.toString()
+    let y = document.getElementById("nus")
+    if(y!=null) y.innerHTML = "Nusan: "+ worde.descendants.nus.toString()
+    document.getElementById("wordd").innerHTML = worde.word
+    return 200
 }
 
 /*
@@ -77,25 +78,24 @@ function changeMode(newMode) {
 }
 
 function showSingleWord(word) {
+    console.log("")
     if(word=='') history.replaceState(null, '', window.location.href.match(/([^\?]*)(\?.*)*/)[1]);
     currentWord = word
     let dictionaryTable = document.getElementById("dictionaryTable")
     let dictionaryStyled = document.getElementById("dictionaryStyled")
     let singleWord = document.getElementById("singleWord")
-    return showWord()
-    .then((status) =>{
-        if(status != 200) return 404
-        if(singleWord.style.visibility == "hidden") {
-            singleWord.style.visibility = "visible"
-            dictionaryTable.style.visibility = "hidden"
-            dictionaryStyled.style.visibility = "hidden"
-        } else {
-            singleWord.style.visibility = "hidden"
-            dictionaryTable.style.visibility = "visible"
-            dictionaryStyled.style.visibility = "visible"
-        }
-        return 200
-    })
+    let status = showWord()
+    if(status != 200) return 404
+    if(singleWord.style.visibility == "hidden") {
+        singleWord.style.visibility = "visible"
+        dictionaryTable.style.visibility = "hidden"
+        dictionaryStyled.style.visibility = "hidden"
+    } else {
+        singleWord.style.visibility = "hidden"
+        dictionaryTable.style.visibility = "visible"
+        dictionaryStyled.style.visibility = "visible"
+    }
+    return 200
 }
 
 function getParams() {

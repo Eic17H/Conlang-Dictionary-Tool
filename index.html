@@ -54,7 +54,7 @@
             <p id="ita" class="definition"></p>
             <p id="eng" class="definition"></p>
             <p id="longdef" class="definition"></p>
-            <div id="descendants">
+            <div id="descendantsGroup">
                 <p id="lyz"></p>
                 <p id="nus"></p>
             </div>
@@ -71,14 +71,14 @@
     <script src=".\script\dictionaryView.js"></script>
     <script src=".\script\tableView.js"></script>
     <script>
+        var words
         function initialize() {
             //loadScript()
             checkParams()
-            initializeSca2("lyz").then(() => {
             loadData().then((data) =>{
-                const words = data
+                words = data
                 showData(words)
-            })})
+            })
         }
     </script>
 </body>

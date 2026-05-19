@@ -29,9 +29,9 @@ function initializeSca2(lang) {
     return fetch(filePath)
     .then(response => response.text())
     .then(data => {
-        console.log(data)
+        //console.log(data)
         //testing if the default function works
-        theText=data
+        let theText=data
         var ruln = theText.split("\n");
 		var rulr = theText.split("\r");
 		if (rulr > ruln) {
@@ -40,8 +40,10 @@ function initializeSca2(lang) {
 				newS += rulr[w] + "\n";
 			theText = newS;
 		}
-        rul = theText
-        nrul = rul.length
+        let rul = theText.split("\n");
+        let nrul = rul.length
+        console.log("=== rul ===")
+        console.log(rul)
         var orul = "";
         var orew = "";
         var ocat = "";
@@ -73,9 +75,9 @@ function initializeSca2(lang) {
         let sca2SupportElementText = `
         <!-- Required hidden elements and form for SCA2 to function -->
         <form name="theform" style="display:none">
-                <textarea name="cats">${ocat /*data[0].match(/(.*=.*\n)+/)[0]*/}</textarea>
-                <textarea name="rewrite">${orew /*data[0].match(/(\n.*\|.*)+/)[0]*/}</textarea>
-                <textarea name="rules">${orul /*data[1]*/}</textarea>
+                <textarea name="cats">${ocat/*data[0].match(/(.*=.*\n)+/)[0]*/}</textarea>
+                <textarea name="rewrite">${orew/*data[0].match(/(\n.*\|.*)+/)[0]*/}</textarea>
+                <textarea name="rules">${orul/*data[1]*/}</textarea>
                 <textarea name="ilex"></textarea>
                 <input type="radio" name="outtype" checked>
                 <input type="radio" name="outtype">
@@ -90,6 +92,8 @@ function initializeSca2(lang) {
                 <div id="olex" style="display:none"></div>
                 <div id="mytext" style="display:none"></div>
                 `
+        console.log("=======!!!!!!!!!!!! support element")
+        console.log(sca2SupportElementText)
         let element = document.getElementById("sca2Support")
         if(!element)
             document.getElementsByTagName("body")[0].innerHTML += `<div id="sca2Support">\n${sca2SupportElementText}\n</div>`
