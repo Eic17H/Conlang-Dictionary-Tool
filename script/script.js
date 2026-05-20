@@ -46,9 +46,11 @@ function showWord() {
         if (x!=null) x.innerHTML = worde[i]
     }
     let x = document.getElementById("lyz")
-    if(x!=null) x.innerHTML = "Lyzian: "+ worde.descendants.lyz.toString()
-    let y = document.getElementById("nus")
-    if(y!=null) y.innerHTML = "Nusan: "+ worde.descendants.nus.toString()
+    if(x!=null) x.innerHTML = "Lyzian: "+ worde.descendants.plz.descendants.lyz.word.toString()
+    x = document.getElementById("tdn")
+    if(x!=null) x.innerHTML = "Tedenian: "+ worde.descendants.plz.descendants.tdn.word.toString()
+    x = document.getElementById("nus")
+    if(x!=null) x.innerHTML = "Nusan: "+ worde.descendants.pns.descendants.nus.word.toString()
     document.getElementById("wordd").innerHTML = worde.word
     return 200
 }

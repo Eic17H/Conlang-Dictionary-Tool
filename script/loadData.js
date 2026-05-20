@@ -123,18 +123,91 @@ function loadLanguage(path) {
             }
         }
         // Loading descendants
+        /**
+         * New logic:
+         * Base path (I'll call it @)
+         * Assuming this is just for one family for now, I'll generalize it eventually
+         * Find @/family.txt and parse it into a tree structure
+         *      giw! (plz (lyz!, tdn!), pns (nus!)) should become:
+         *          giw = {
+         *              shown: true,
+         *              plz: {
+         *                  lyz: {shown: true},
+         *                  tdn: {shown: true}
+         *              },
+         *              pns: {
+         *                  nus: {shown: true}
+         *              }
+         *          }
+         *      That means that the dictionary will use data for giw,
+         *      and for each word, the descendant tree will look like this:
+         *          word = {
+         *              word: "...",
+         *              ...
+         *              descendants: {
+         *                  plz: {
+         *                      word: "...",
+         *                      descendants: {
+         *                          lyz: {
+         *                              word: "...",
+         *                              shown: true
+         *                          },
+         *                          tdn: {
+         *                              word: "...",
+         *                              shown: true
+         *                          }
+         *                      }
+         *                  },
+         *                  pns: {
+         *                      word: "...",
+         *                      descendants: {
+         *                          nus: {
+         *                              word: "...",
+         *                              shown: true
+         *                          }
+         *                      }
+         *                  }
+         *              }
+         *          }
+         *      Showing descendants can thus be overridden for individual words
+         *      ( such as words that only survive in one branch )
+         * I'm getting ahead of myself
+         * 
+         * Base path as @
+         * Get language info (local name, translated name) from @/settings.txt
+         * Get family info from @/family.txt
+         * Use the family info to read subfolders
+         * For example, you found plz, then you open the folder @/plz
+         *      For each word in the data, apply the sound changes
+         *      Add the language info to the object that stores the language info as a tree
+         *      Do the same with the subfolders
+         * So it would be like:
+         *      words = loadWords()
+         *      function evolve(lang, basepath) {
+         *          
+         *      }
+         * I can't do it
+         * I'll just hardcode it for now, sorry
+         */
         for(let i in words)
-            words[i].descendants = {lyz: "", nus: ""}
-        return initializeSca2("lyz").then(() => {
-            for(let j in words) {
-                words[j].descendants.lyz = runSCA(words[j].word).split("\n")[0]
-            }
-            return initializeSca2("nus").then(() => {
-            for(let k in words) {
-                words[k].descendants.nus = runSCA(words[k].word).split("\n")[0]
-            }
-            return customSort(words)
-        })
+            words[i].descendants = {plz: {word: "", descendants: {lyz: {word: ""}, tdn: {word: ""}}}, pns: {word: "", descendants: {nus: {word: ""}}}}
+        
+        // I hate this
+        return initializeSca2("plz").then (() => {
+            for(let i in words) words[i].descendants.plz.word = runSCA(words[i].word).split("\n")[0]
+            return initializeSca2("plz/lyz").then (() => {
+                for(let i in words) words[i].descendants.plz.descendants.lyz.word = runSCA(words[i].descendants.plz.word).split("\n")[0]
+                return initializeSca2("plz/tdn").then (() => {
+                    for(let i in words) words[i].descendants.plz.descendants.tdn.word = runSCA(words[i].descendants.plz.word).split("\n")[0]
+                    return initializeSca2("pns").then (() => {
+                        for(let i in words) words[i].descendants.pns.word = runSCA(words[i].word).split("\n")[0]
+                        return initializeSca2("pns/nus").then (() => {
+                            for(let i in words) words[i].descendants.pns.descendants.nus.word = runSCA(words[i].descendants.pns.word).split("\n")[0]
+                            return customSort(words)
+                        })
+                    })
+                })
+            })
         })
     })
 }
