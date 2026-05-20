@@ -75,10 +75,10 @@
         var words
         function initialize() {
             //loadScript()
-            checkParams()
             loadData().then((data) =>{
                 words = data
                 showData(words)
+                checkParams()
             })
         }
     </script>
